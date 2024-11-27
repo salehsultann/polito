@@ -1,0 +1,119 @@
+.wp-block-theme-blocks-partners {
+    text-align: center;
+    background: url(images/pattern-seigaiha.jpg);
+
+    .block-title {
+    }
+    .block-content {
+        max-width: $max-content-width;
+        margin: 0 auto;
+        padding-bottom: 15px;
+    }
+}
+
+.theme-block.wp-block-theme-blocks-partners {
+
+    margin-top:0;
+    margin-bottom: 0;
+    height: auto;
+    @media screen and (min-width:$mobile-breakpoint + 1px) {
+        @include clip-path(url(#clip-partners));
+    }
+    @media screen and (max-width:$mobile-breakpoint) {
+        @include clip-path(url(#clip-partners-mobile));
+        height: auto;
+    }
+    .wrap {
+      padding: $block-margin 0 ($block-margin);
+    }
+    .query-posts {
+        display: block;
+        margin: 1em auto 0;
+        visibility: hidden;
+        &.slick-initialized {
+            visibility: visible;
+        }
+
+        .hentry {
+            vertical-align: middle;
+            margin: 0;
+            &.off {
+                //border: 1px solid red;
+                display: none !important;
+            }
+            .inner {
+                min-height: 150px;
+                max-height: 150px;
+                overflow: hidden;
+                .content {
+                  line-height: 1.4em;
+                  overflow: hidden;
+                  .title {
+                    margin-bottom: 0.5em;
+                    font-size: 1rem;
+                  }
+                }
+                @media screen and (max-width:$mobile-breakpoint) {
+                    min-height: 100px;
+                }
+                @media screen and (max-width:500px) {
+                    min-height: 50px;
+                }
+            }
+        }
+      }
+    .slick-slide {
+        display: inline-block;
+        vertical-align: top;
+    }
+    .slick-list {
+        overflow: hidden;
+    }
+    .controls {
+        $height: 24px;
+
+        display: flex;
+        justify-content: center;
+        margin: 2em auto 0;
+        color: $color-gray;
+        .slick-arrow {
+            display: block;
+            margin: 2px 0 0;
+            padding: 0 0.5em;
+            line-height: $height;
+            cursor: pointer;
+            &.slick-next {
+                order: 1;
+            }
+        }
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        li {
+            display: inline-block;
+            margin: 0 0.5em;
+            button {
+                display: inline-block;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+                width: $height;
+                height: $height;
+                line-height: $height;
+                background: transparent;
+                border-radius: 50%;
+                color: inherit;
+                outline: 0;
+                font-weight: normal;
+            }
+            &.slick-active {
+                button {
+                    background: #95d4e9;
+                    color: white;
+                }
+            }
+        }
+    }
+}

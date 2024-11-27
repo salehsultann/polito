@@ -1,0 +1,32 @@
+.wp-block-theme-blocks-cta-button {
+    margin: 1.5em 0 2em;
+    .urls {
+        
+        display: flex;
+        justify-content: center;
+        a,
+        .link {
+            display: block;
+            padding: 9px 35px 7px;
+            border-radius: 50px;
+            border: 2px solid $color-gray;
+            text-align: center;
+            text-transform: uppercase;
+            color: $color-text;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            &:hover {
+                background: $color-blue;
+                color: white;
+                border-color: $color-blue;
+            }
+        }
+        a + a {
+            margin-left: 1em;
+        }
+    }
+}
+.theme-block.wp-block-theme-blocks-cta-button {
+}

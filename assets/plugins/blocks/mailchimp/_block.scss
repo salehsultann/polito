@@ -1,0 +1,97 @@
+.wp-block-theme-blocks-mailchimp {
+    form {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        label {
+            display: block;
+            width: 48%;
+            margin: 0 0 1em;
+            @media screen and (max-width: $mobile-breakpoint) {
+                width: 100%;
+            }
+            strong {
+                display: block;
+            }
+            input {
+                display: block;
+                width: 100%;
+            }
+        }
+        .action {
+            width: 100%;
+            //text-align: center;
+        }
+        .message,
+        .message-success,
+        .message-error {
+            width: 100%;
+            margin: 1em 0 0;
+            font-weight: bold;
+        }
+        .message.error,
+        .message-error {
+            color: red;
+        }
+    
+        .mc-field-group {
+            margin-bottom: 1em;
+            line-height: 1;
+            ul {
+                position: relative;
+                list-style: none;
+                margin: 0.5em 0 0 0;
+                padding: 0;
+                @media screen and (min-width: $mobile-breakpoint) {
+                    columns: 3;
+                    -webkit-columns: 3;
+                    -moz-columns: 3;
+                }
+                
+                &.loading {
+                    min-height: 100px;
+                    &:after {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        margin: -15px 0 0 -15px;
+                        display: block;
+                        background: url(images/loading.png) no-repeat center top;
+                        width: 30px;
+                        height: 30px;
+                        content:' ';
+                        @include animation(loading 1s steps(19) infinite);
+                    }
+                }
+                  
+                
+                @media screen and (max-width: $menu-breakpoint) {
+                    columns: 2;
+                    -webkit-columns: 2;
+                    -moz-columns: 2;
+                  }
+                
+                li {
+                    position: relative;
+                    width: auto;
+                    break-inside: avoid;
+                    padding: 0 0 0 1.3em;
+                    margin: 0 0 0.5em;
+                    label {
+                        display: inline-block;
+                        width: auto;
+                        margin: 0;
+                        cursor: pointer;
+                    }
+                    input[type="checkbox"] {
+                        top: 0px;
+                        left: 0;
+                        position: absolute;
+                    }
+              }
+          }
+        }
+    }
+}

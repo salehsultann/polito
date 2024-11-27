@@ -1,0 +1,13 @@
+.wp-block-theme-blocks-callout {
+    margin: 1.5em auto;
+    padding: 2em 2.5em;
+    background: $color-light-gray;
+    font-size: 0.85em;
+    
+    h1,h2,h3,h4,h5 {
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+

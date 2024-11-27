@@ -1,0 +1,72 @@
+.theme-block.wp-block-theme-blocks-interrupt-images {
+    padding: $block-margin 0;
+    .wrap {
+        position: relative;
+        z-index: 1;
+        max-width: $max-page-width;
+        margin: 0 auto;
+        @media screen and (max-width: math.div($max-page-width, 1 - 0.16)) {
+            margin: 0 8%;
+        }
+    }
+    .images {
+        .image {
+            img {
+                display: block;
+                width: 100%;
+                max-height: 400px;
+                object-fit: cover;
+                object-position: 50% 50%;
+            }
+        }
+    }
+    @media screen and (min-width:$mobile-breakpoint + 1px) {
+        .images {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .image {
+                flex-basis: 50%;
+                padding: 1em;
+                img {
+                    height: 350px;
+
+                }
+                &.image1 {
+                    @include transform(translate(0, -75px));
+                }
+                &.image2 {
+                    @include transform(translate(0, 75px));
+
+                }
+            }
+        }
+    }
+    @media screen and (max-width:$mobile-breakpoint) {
+        .images {
+            .images {
+                img {
+                    height: auto;
+                }
+            }
+            .image + .image {
+                margin-top: 1em;
+            }
+        }
+    }
+
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $color-light-blue;
+        @include clip-path(url(#clip-interrupt-images));
+    }
+    &.last {
+        .bg {
+            @include clip-path(url(#clip-interrupt-images-top));
+        }
+    }
+}

@@ -1,0 +1,83 @@
+.wp-block-theme-blocks-profiles {
+    text-align: center;
+    .block-title {
+    }
+    .block-content {
+        max-width: $max-content-width;
+        margin: 0 auto;
+    }
+}
+
+.theme-block.wp-block-theme-blocks-profiles {
+    margin-top: 0;
+    background: #bfe5f2;
+    margin-bottom: 0px;
+    @media screen and (min-width:$mobile-breakpoint + 1px) {
+        @include clip-path(url(#clip-profiles-bottom));
+    }
+    @media screen and (max-width:$mobile-breakpoint) {
+        @include clip-path(url(#clip-profiles-bottom-mobile));
+    }
+    .wrap {
+      padding: 50px 0 ($block-margin*1.5);
+    }
+    .query-posts {
+        margin: 3em auto 0;
+
+
+        &.loading {
+            min-height: 200px;
+            &:after {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin: -15px 0 0 -15px;
+                display: block;
+                background: url(images/loading.png) no-repeat center top;
+                width: 30px;
+                height: 30px;
+                content:' ';
+                @include animation(loading 1s steps(19) infinite);
+            }
+        }
+        .hentry.view-all {
+            position: relative;
+            display: flex;
+            padding: 0;
+            align-self: flex-start;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+
+            img {
+                display: block;
+                position: relative;
+                width: 100%;
+            }
+            a {
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: $font-sans-serif;
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: $color-charcoal;
+                background-color: $color-medium-gray;
+                @include calc(height, '100% - 25px');
+                &:hover {
+                    background-color: darken($color-medium-gray, 3%);
+                }
+            }
+        }
+    }
+
+    form {
+        margin: 2em 0 0;
+    }
+}

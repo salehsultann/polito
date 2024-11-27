@@ -1,0 +1,138 @@
+.wp-block-theme-blocks-page-intro {
+    @media screen and (min-width:$mobile-breakpoint + 1px) {
+        .wrap-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .breadcrumb {
+            margin: 0 0 1.5em;
+            flex-basis: 100%;
+            
+        }
+        .block-content {
+            flex-basis: 45%;
+        }
+        .images {
+            padding-right: 0px;
+            flex-basis: 40%;
+        }
+    }
+
+    .wrap-inner {
+        position: relative;
+        z-index: 1;
+    }
+    .images {
+        position: relative;
+        .image {
+            //height: 460px;
+            margin: 0;
+            background: #eee;
+            img {
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                height: auto;
+                min-height: 400px;
+                object-fit: cover;
+            }
+        }
+    }
+    .images {
+        order: 1;
+        .image img {
+            margin: 0 0 0 auto;
+        }
+    }
+
+    h1,h2 {
+        margin-top: 0;
+    }
+    
+
+
+
+}
+
+
+.theme-block.wp-block-theme-blocks-page-intro {
+    .image1 {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        @include calc(height, '100% + 2em + 50px');
+        @include clip-path(url(#clip-page-intro-image-top));
+        img {
+            display: block;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        //@include calc(height, '100% - 100px');
+        background: $color-light-blue2;
+        @media screen and (min-width:$mobile-breakpoint + 1px) {
+            @include clip-path(url(#clip-page-intro-top));
+        }
+        @media screen and (max-width:$mobile-breakpoint) {
+            @include clip-path(url(#clip-page-intro-top-mobile));
+        }
+        
+    }
+    padding: 5em 0 0;
+    @media screen and (min-width:$mobile-breakpoint + 1px) {
+        width: 100vw;
+        left: 50%;
+        margin-left: -50vw;
+        .wrap-inner {
+            margin: 0 auto;
+            max-width: 1400px;
+            display: grid;
+            grid-template-columns: 7% 40% auto 40% ;
+            grid-template-areas: 
+                ". breadcrumb breadcrumb breadcrumb"
+                ". content    .......... images";
+        }
+        .breadcrumb {
+            grid-area: breadcrumb;
+        }
+        .block-content {
+            grid-area: content;
+            padding: 0 0 2em;
+        }
+        .images {
+            grid-area: images;
+        }
+        
+    }
+    @media screen and (min-width:$mobile-breakpoint + 1px) and (max-width:1024px) {
+        padding: 4em 0 1em;
+        .wrap-inner {
+            grid-template-columns: auto 45% auto 40% ;
+        }
+        
+    }
+
+    @media screen and (max-width:$mobile-breakpoint) {
+        padding: 3em 0 1em;
+        .bg,
+        .images {
+            width: 100vw;
+            left: 50%;
+            margin-left: -50vw;
+        }
+        .images {
+            top: 80px;
+        }
+    }
+}

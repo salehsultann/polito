@@ -1,0 +1,71 @@
+/*!
+Theme Name: The Ocean Foundation
+Theme URI: http://www.oceanfdn.org
+Author: Openbox9 (Joe Tan)
+
+DO NOT EDIT style.css DIRECTLY.
+
+Use style.scss.
+*/
+
+@import "css/variables";
+@import "css/font-awesome";
+@import "css/fonts";
+@import "css/animations";
+@import "css/lib";
+
+@import "css/grid";
+@import "css/global";
+@import "css/table";
+@import "css/forms";
+@import "css/ninja-forms";
+@import "css/captions";
+@import "css/gallery";
+@import "css/headings";
+
+
+@import "css/header";
+@import "css/footer";
+@import "css/main";
+@import "css/front-page";
+@import "css/hentry";
+@import "css/page";
+@import "css/single";
+@import "css/single-supporter";
+@import "css/single-profile";
+@import "css/posts-nav";
+@import "css/overlay";
+@import "css/map";
+@import "css/banner";
+@import "css/donate";
+@import "css/blocks";
+@import "css/search";
+// @import "css/posts-filter";
+@import "css/meganav";
+
+@import "plugins/blocks/hero/block";
+@import "plugins/blocks/posts-carousel/block";
+@import "plugins/blocks/browse-projects/block";
+@import "plugins/blocks/interrupt/block";
+@import "plugins/blocks/posts/block";
+@import "plugins/blocks/images-carousel/block";
+@import "plugins/blocks/project-info/block";
+@import "plugins/blocks/cta-button/block";
+@import "plugins/blocks/expandable/block";
+@import "plugins/blocks/logos/block";
+@import "plugins/blocks/mailchimp/block";
+@import "plugins/blocks/content/block";
+@import "plugins/blocks/callout/block";
+@import "plugins/blocks/profiles/block";
+@import "plugins/blocks/partners/block";
+@import "plugins/blocks/content-section/block";
+@import "plugins/blocks/interrupt-images/block";
+@import "plugins/blocks/page-intro/block";
+@import "plugins/blocks/interrupt-featured/block";
+@import "plugins/blocks/projects/block";
+@import "plugins/blocks/expandable/block";
+
+
+.page-styleguide {
+  @import "css/styleguide";
+}

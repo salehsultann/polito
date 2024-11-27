@@ -1,0 +1,84 @@
+.wp-block-theme-blocks-browse-projects {
+    text-align: center;
+    .block-title {
+        color: $color-gray
+    }
+    .filters {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        .filter, button {
+            margin: 0.5em;
+        }
+    }
+    
+    .more {
+        margin: 3em 0 0;
+    }
+    .results {
+        margin: 2em 0 auto;
+        font-size: 0.8rem;
+        
+    }
+}
+
+.theme-block.wp-block-theme-blocks-browse-projects {
+    .block-title {
+        margin-bottom: 30px;
+    }
+    .toggle.map {
+        display: none;
+        display: block;
+        margin: 0 0 0 2em;
+        font-family: $font-headline;
+        color: $color-blue;
+        text-transform: uppercase;
+        
+        vertical-align: middle;
+        body.map-ready & {
+            display: block;
+        }
+        .label {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 1em 0 0;
+            padding-top: 4px;
+        }
+        .control {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: 45px;
+            height: 26px;
+            border-radius: 50px;
+            background: $color-orange;
+            .x {
+                position: absolute;
+                top: 4px;
+                left: 22px;
+                width: 18px;
+                height: 18px;
+                background: white;
+                border-radius: 50%;
+                @include transition(all 0.2s $nav-ease);
+            }
+            body.map-on & {
+                background-color: $color-orange;
+                .x {
+                    left: 22px;
+                }
+            }
+            body.map-off & {
+                background-color: $color-gray;
+                .x {
+                    left: 4px;
+                }
+            }
+        }
+        
+    }
+    @media screen and (max-width:$mobile-breakpoint) {
+        
+    }
+}

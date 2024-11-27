@@ -1,0 +1,176 @@
+.wp-block-theme-blocks-interrupt {
+    background: $color-blue no-repeat 50% 50%;
+    background-size: cover;
+    /*
+    &.wave-top:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 36px;
+        background: url(images/wave5.png) no-repeat 50% 50%;
+        background-size: 100% 100%;
+    }
+    &.wave-bottom:after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 69px;
+        background: url(images/wave4.png) no-repeat 50% 50%;
+        background-size: 100% 100%;
+    }
+    */
+
+    .block-title {
+        color: $color-gray
+    }
+    .filters {
+        display: flex;
+        justify-content: center;
+        .filter, button {
+            margin: 0 0.5em;
+        }
+    }
+
+    .more {
+        margin: 3em 0 0;
+    }
+    &.theme-block {
+      margin-top: 0px;
+    }
+}
+
+.theme-block.wp-block-theme-blocks-interrupt {
+    .wrap {
+        padding: $block-margin 0;
+        @media screen and (max-width:$mobile-breakpoint) {
+            padding: calc( $block-margin / 2 ) 0;
+        }
+    }
+    &.wave-top {
+        .wrap {
+            @media screen and (min-width: #{$mobile-breakpoint + 1px}) {
+                padding-top: ($block-margin * 1.5);
+            }
+        }
+        @media screen and (min-width: #{$mobile-breakpoint + 1px}) {
+            @include clip-path(url(#clip-interrupt-top));
+        }
+        @media screen and (max-width:$mobile-breakpoint) {
+            @include clip-path(url(#clip-interrupt-top-mobile));
+        }
+
+        &:last-child {
+            margin-bottom: $block-margin * -1;
+        }
+    }
+    &.wave-bottom {
+        .wrap {
+            @media screen and (min-width:$mobile-breakpoint + 1px) {
+                padding-bottom: ($block-margin * 2);
+            }
+        }
+        @include clip-path(url(#clip-interrupt-bottom));
+    }
+    &.wave-top.wave-bottom {
+        @include clip-path(url(#clip-interrupt-top-bottom));
+    }
+
+}
+
+.wp-block-theme-blocks-interrupt.stats {
+    color: white;
+
+    .wp-block-columns {
+        align-items: center;
+    }
+
+    h2 {
+        margin-top: 0;
+        line-height: 1;
+        font-family: $font-headline;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 2.3em;
+        letter-spacing: 0.03em;
+        strong {
+            display: block;
+            font-size: 1.5em;
+            line-height: 0.9em;
+        }
+    }
+    .buttons {
+        .button {
+            padding-left: 25px;
+            padding-right: 25px;
+            margin-bottom: 15px;
+            margin-right: 15px;
+            text-align: center;
+            word-break: keep-all;
+        }
+        .button:last-of-type {
+            margin-right: 0;
+        }
+    }
+    @media screen and (max-width: 1250px) {
+        .buttons {
+            font-size: 16px;
+        }
+    }
+    @media screen and (max-width: 1150px) {
+        h2 {
+            font-size: 2em;
+        }
+        .buttons {
+            font-size: 14px;
+            button {
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-right: 5px;
+            }
+        }
+        .wp-block-columns:first-child {
+            .wp-block-column {
+                margin-right: 10px;
+            }
+        }
+    }
+    @media screen and (max-width: $menu-breakpoint) {
+        .wp-block-columns {
+            .wp-block-column {
+                margin-right: 15px;
+                margin-left: 15px;
+            }
+        }
+    }
+    @media screen and (max-width: $mobile-breakpoint + 14px) {
+        .wp-block-columns {
+            text-align: center;
+            .wp-block-column {
+                margin: 0 auto;
+                flex-basis: 100%;
+            }
+        }
+    }
+        .buttons {
+            font-size: 17px;
+        }
+    }
+
+.wp-block-theme-blocks-interrupt.partners {
+  .wrap {
+    padding: $block-margin*1.5 0;
+  }
+    text-align: center;
+    h4 {
+        margin: 0 0 calc($block-margin / 3);
+    }
+    .more {
+        margin: calc($block-margin / 3) 0 0;
+    }
+}

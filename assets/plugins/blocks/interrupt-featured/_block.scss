@@ -1,0 +1,144 @@
+.wp-block-theme-blocks-interrupt-featured {
+    .ctas {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        > .image {
+            position: relative;
+            display: block;
+            width: 50%;
+            height: 280px;
+            background: rgba(#000, 0.1) no-repeat 50% 50%;
+            background-size: cover;
+            &.cta2 {
+                @include transform(translate(0, 80px));
+                z-index: 1;
+            }
+            &.cta3 {
+                @include transform(translate(100px, 0));
+            }
+            .content {
+                position: absolute;
+                bottom: 1em;
+                left: 1em;
+                color: white;
+            }
+        }
+        > .cta {
+            align-self: flex-start;
+            @include transform(translate(100px, 80px));
+            width: 350px;
+            margin: 1em 0 0 1em;
+
+            background: $color-blue;
+            color: white;
+            text-align: center;
+            .a,
+            a {
+                display: block;
+                padding: 1.4em 0.5em;
+                font-size: 1.4rem;
+                font-family: $font-headline;
+                font-weight: normal;
+                text-transform: uppercase;
+                color: inherit;
+                text-decoration: none;
+            }
+            &:hover {
+              background: $color-orange;
+            }
+        }
+        h3 {
+            margin: 0;
+            color: inherit;
+            font-family: $font-headline;
+            font-weight: normal;
+            text-transform: uppercase;
+            line-height: 1;
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+    }
+    .block-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    @media screen and (max-width:1080px) {
+        .ctas {
+            > .cta {
+                width: 100%;
+                margin: 1em 0 0;
+                @include transform(none);
+                .a, a {
+                    padding: 0.5em;
+                }
+            }
+
+        }
+    }
+    @media screen and (max-width:$mobile-breakpoint) {
+        .ctas {
+            justify-content: center;
+            > .image {
+                height: 200px;
+                width: 100%;
+                &.cta2, &.cta3 {
+                    @include transform(none);
+                }
+
+            }
+        }
+    }
+}
+.theme-block.wp-block-theme-blocks-interrupt-featured {
+    padding: 0 0 $block-margin 0;
+    margin-bottom: 0;
+    .wrap {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+    }
+    .images {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .image {
+            flex-basis: 50%;
+            padding: 1em;
+            img {
+                display: block;
+                width: 100%;
+                max-height: 400px;
+                object-fit: cover;
+                object-position: 50% 50%;
+            }
+            &.image1 {
+                @include transform(translate(0, -75px));
+            }
+            &.image2 {
+                @include transform(translate(0, 75px));
+            }
+        }
+    }
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100vw;
+        margin: 0 0 0 -50vw;
+        height: 100%;
+        background: $color-light-blue;
+        @include clip-path(url(#clip-interrupt-featured));
+    }
+    .ctas {
+        margin-bottom: 5em;
+    }
+    .block-content {
+        margin-bottom: calc( $block-margin / 2 );
+    }
+
+}

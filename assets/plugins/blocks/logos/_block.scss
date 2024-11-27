@@ -1,0 +1,28 @@
+.theme-block.wp-block-theme-blocks-logos {
+    .logos {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        margin: 20px;
+        .image {
+            display: flex;
+            align-items: center;
+            img {
+                display: block;
+                max-width: 100px;
+                max-height: 100px;
+                -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+                filter: grayscale(100%);
+            }
+        }
+    }
+    .block-content & {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+}

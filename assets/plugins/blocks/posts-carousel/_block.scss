@@ -1,0 +1,146 @@
+.theme-block.wp-block-theme-blocks-posts-carousel {
+//    margin-top: 250px;
+    #query-posts {
+        position: relative;
+        white-space: nowrap;
+        .hentry {
+            outline: 0;
+            display: inline-block;
+            vertical-align: top;
+            white-space: normal;
+        }
+        
+        .slick-list {
+            overflow: hidden;
+        }
+        .slick-arrow {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            height: 50px;
+            line-height: 50px;
+            margin: -25px 0 0;
+            font-size: 50px;
+            color: $color-gray;
+            cursor: pointer;
+            &.slick-next {
+                left: 100%;
+                margin-left: 30px;
+            }
+            &.slick-prev {
+                right: 100%;
+                margin-right: 30px;
+            }
+        }
+        .slick-dots {
+            position: absolute;
+            left: 775px;
+            bottom: 15px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li {
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 1em 0 0;
+                padding: 0;
+                button {
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+                    padding: 0;
+                    margin: 0;
+                    line-height: 30px;
+                    color: #999;
+                    background: rgba(#fff, 0);
+                    font-weight: 300;
+                    &:hover {
+                        background: #ddd;
+                    }
+                }
+                &.slick-active {
+                    button {
+                        background: $color-light-blue;
+                        color: white;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width:1340px) {
+            .nav-wrap {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 10px;
+                display: flex;
+                align-items: flex-end;
+                .spacer {
+                    position: relative;
+                    flex-basis: 75%;
+                    height: 10px;
+                    max-width: 700px;
+                }
+                .nav {
+                    flex-basis: 50%;
+                    padding: 0 0 0 75px;
+                    max-width: 350px;
+                    display: flex;
+                    justify-content: left;
+                    align-items: flex-start;
+                }
+            }
+            .slick-dots {
+                position: relative;
+                left: auto;
+                right:auto;
+                top: auto;
+                bottom: auto;
+                margin: 10px 1em 0 1em;
+                width: auto;
+                
+                text-align: center;
+                li {
+                    margin: 0 0.2em;
+                }
+            }
+            .slick-arrow {
+                position: relative;
+                top: auto !important;
+                bottom: auto !important;
+                left: auto !important;
+                right: auto !important;
+                margin: 0 !important;
+                font-size: 30px;
+                &.slick-next {
+                    order:1;    
+                }
+                &.slick-prev {
+                    order:-1;
+                    //right: 350px;
+                    
+                    
+                }
+            }
+        }
+        @media screen and (max-width:$mobile-breakpoint) {
+            .nav-wrap {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                width: auto;
+                height: auto;
+                justify-content: center;
+                .nav {
+                    padding: 20px 0 0;
+                    justify-content: center;
+                }
+                .spacer {
+                    display: none;
+                }
+            }
+        }
+        
+    }
+    
+}
